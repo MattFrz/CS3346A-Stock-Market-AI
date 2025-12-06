@@ -6,11 +6,15 @@ Also handles train/test splitting.
 
 """
 
+import sys
 import os
 import pickle
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+
+# Add the parent directory to the path so Python can find config.py
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import settings from config.py
 from config import DATA_PATH, TRAIN_TEST_SPLIT, WINDOW_SIZE, SCALER_PATH

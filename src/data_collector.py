@@ -6,8 +6,13 @@ Downloads historical stock data for a specified ticker symbol and date
 
 """
 
+import sys
 import os
 import yfinance as yf
+import pandas as pd
+
+# Add the parent directory to the path so Python can find config.py
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import settings from config.py
 from config import TICKER, START_DATE, END_DATE, DATA_PATH
@@ -36,6 +41,10 @@ def download_sp500_data():
     data_dir = os.path.dirname(DATA_PATH)
     if data_dir:
         os.makedirs(data_dir, exist_ok=True)
+    
+    # Flatten column names if they're multi-level (removes ticker symbol)
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = df.columns.get_level_values(0)
 
     # Save to CSV
     df.to_csv(DATA_PATH)
