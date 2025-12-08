@@ -1,5 +1,13 @@
-# Project Configuration Settings
+"""
+config.py
 
+Project Configuration Settings
+"""
+
+# Feature Engineering
+USE_FEATURES = True  # Toggle feature engineering on/off
+
+# Data Source
 TICKER = "^GSPC"  # S&P 500 Index Ticker Symbol
 START_DATE = "2010-01-01"  # Start date for data retrieval
 END_DATE = "2023-12-31"  # End date for data retrieval
@@ -14,5 +22,5 @@ BATCH_SIZE = 32  # Size of each training batch
 
 # Paths
 DATA_PATH = "data/sp500_data.csv"  # Path to save/load the dataset
-MODEL_PATH = "model/sp500_model.keras"  # Path to save/load the trained
+MODEL_PATH = "model/sp500_model.keras"  # Path to save/load the trained model
 SCALER_PATH = "model/sp500_scaler.pkl"  # Path to save/load the scaler
