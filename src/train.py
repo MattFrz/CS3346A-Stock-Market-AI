@@ -191,7 +191,7 @@ def main():
     best_epoch = np.argmin(history.history['val_loss']) + 1
     print(f"Best Epoch: {best_epoch}")
     print(f"Training Loss: {history.history['loss'][best_epoch - 1]:.6f}")
-    print(f"Training MAE: {history.history['mae'][best_epoch - 1]:. 6f}")
+    print(f"Training MAE: {history.history['mae'][best_epoch - 1]:.6f}")
     print(f"Validation Loss: {min(history.history['val_loss']):.6f}")
     print(f"Validation MAE: {history.history['val_mae'][best_epoch - 1]:.6f}")
     print("="*60 + "\n")

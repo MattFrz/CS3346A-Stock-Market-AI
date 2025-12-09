@@ -1,0 +1,260 @@
+Training History
+==================================================
+
+Epoch 1:
+  Loss: 0.005189
+  MAE: 0.044243
+  Val Loss: 0.010576
+  Val MAE: 0.084358
+
+Epoch 2:
+  Loss: 0.001400
+  MAE: 0.027279
+  Val Loss: 0.014809
+  Val MAE: 0.104136
+
+Epoch 3:
+  Loss: 0.001023
+  MAE: 0.022812
+  Val Loss: 0.009134
+  Val MAE: 0.078738
+
+Epoch 4:
+  Loss: 0.000902
+  MAE: 0.021052
+  Val Loss: 0.004488
+  Val MAE: 0.052820
+
+Epoch 5:
+  Loss: 0.000802
+  MAE: 0.020583
+  Val Loss: 0.003627
+  Val MAE: 0.045473
+
+Epoch 6:
+  Loss: 0.000860
+  MAE: 0.021096
+  Val Loss: 0.012551
+  Val MAE: 0.099366
+
+Epoch 7:
+  Loss: 0.000805
+  MAE: 0.019808
+  Val Loss: 0.003989
+  Val MAE: 0.048482
+
+Epoch 8:
+  Loss: 0.000731
+  MAE: 0.019192
+  Val Loss: 0.006471
+  Val MAE: 0.066370
+
+Epoch 9:
+  Loss: 0.000630
+  MAE: 0.017341
+  Val Loss: 0.004658
+  Val MAE: 0.053782
+
+Epoch 10:
+  Loss: 0.000588
+  MAE: 0.017010
+  Val Loss: 0.005045
+  Val MAE: 0.058026
+
+Epoch 11:
+  Loss: 0.000580
+  MAE: 0.016672
+  Val Loss: 0.004267
+  Val MAE: 0.051384
+
+Epoch 12:
+  Loss: 0.000560
+  MAE: 0.016595
+  Val Loss: 0.001911
+  Val MAE: 0.033120
+
+Epoch 13:
+  Loss: 0.000599
+  MAE: 0.017278
+  Val Loss: 0.002352
+  Val MAE: 0.036692
+
+Epoch 14:
+  Loss: 0.000515
+  MAE: 0.015855
+  Val Loss: 0.002928
+  Val MAE: 0.042501
+
+Epoch 15:
+  Loss: 0.000553
+  MAE: 0.016253
+  Val Loss: 0.003816
+  Val MAE: 0.047855
+
+Epoch 16:
+  Loss: 0.000502
+  MAE: 0.015918
+  Val Loss: 0.003868
+  Val MAE: 0.048970
+
+Epoch 17:
+  Loss: 0.000525
+  MAE: 0.015839
+  Val Loss: 0.002571
+  Val MAE: 0.039004
+
+Epoch 18:
+  Loss: 0.000484
+  MAE: 0.015339
+  Val Loss: 0.005624
+  Val MAE: 0.061580
+
+Epoch 19:
+  Loss: 0.000462
+  MAE: 0.014932
+  Val Loss: 0.004636
+  Val MAE: 0.053994
+
+Epoch 20:
+  Loss: 0.000421
+  MAE: 0.014375
+  Val Loss: 0.001689
+  Val MAE: 0.031042
+
+Epoch 21:
+  Loss: 0.000451
+  MAE: 0.014511
+  Val Loss: 0.001983
+  Val MAE: 0.033682
+
+Epoch 22:
+  Loss: 0.000426
+  MAE: 0.014509
+  Val Loss: 0.003680
+  Val MAE: 0.047315
+
+Epoch 23:
+  Loss: 0.000468
+  MAE: 0.015341
+  Val Loss: 0.002833
+  Val MAE: 0.040122
+
+Epoch 24:
+  Loss: 0.000453
+  MAE: 0.015005
+  Val Loss: 0.005281
+  Val MAE: 0.060235
+
+Epoch 25:
+  Loss: 0.000404
+  MAE: 0.013875
+  Val Loss: 0.006520
+  Val MAE: 0.067482
+
+Epoch 26:
+  Loss: 0.000390
+  MAE: 0.013498
+  Val Loss: 0.002668
+  Val MAE: 0.039394
+
+Epoch 27:
+  Loss: 0.000433
+  MAE: 0.014183
+  Val Loss: 0.001687
+  Val MAE: 0.030560
+
+Epoch 28:
+  Loss: 0.000353
+  MAE: 0.013003
+  Val Loss: 0.003043
+  Val MAE: 0.042955
+
+Epoch 29:
+  Loss: 0.000368
+  MAE: 0.013296
+  Val Loss: 0.004914
+  Val MAE: 0.057852
+
+Epoch 30:
+  Loss: 0.000351
+  MAE: 0.012942
+  Val Loss: 0.001892
+  Val MAE: 0.032048
+
+Epoch 31:
+  Loss: 0.000352
+  MAE: 0.012987
+  Val Loss: 0.005997
+  Val MAE: 0.065870
+
+Epoch 32:
+  Loss: 0.000440
+  MAE: 0.014663
+  Val Loss: 0.001523
+  Val MAE: 0.028470
+
+Epoch 33:
+  Loss: 0.000335
+  MAE: 0.012432
+  Val Loss: 0.001561
+  Val MAE: 0.029265
+
+Epoch 34:
+  Loss: 0.000392
+  MAE: 0.014178
+  Val Loss: 0.003393
+  Val MAE: 0.045340
+
+Epoch 35:
+  Loss: 0.000357
+  MAE: 0.013158
+  Val Loss: 0.001864
+  Val MAE: 0.031450
+
+Epoch 36:
+  Loss: 0.000342
+  MAE: 0.012915
+  Val Loss: 0.002200
+  Val MAE: 0.034232
+
+Epoch 37:
+  Loss: 0.000316
+  MAE: 0.012482
+  Val Loss: 0.002999
+  Val MAE: 0.040859
+
+Epoch 38:
+  Loss: 0.000356
+  MAE: 0.013636
+  Val Loss: 0.003152
+  Val MAE: 0.044315
+
+Epoch 39:
+  Loss: 0.000365
+  MAE: 0.013505
+  Val Loss: 0.005808
+  Val MAE: 0.064305
+
+Epoch 40:
+  Loss: 0.000336
+  MAE: 0.012775
+  Val Loss: 0.002813
+  Val MAE: 0.039479
+
+Epoch 41:
+  Loss: 0.000309
+  MAE: 0.012164
+  Val Loss: 0.003750
+  Val MAE: 0.047987
+
+Epoch 42:
+  Loss: 0.000301
+  MAE: 0.012149
+  Val Loss: 0.004766
+  Val MAE: 0.056293
+
+
+Best Epoch:
+  Epoch: 32
+  Val Loss: 0.001523
+  Val MAE: 0.028470

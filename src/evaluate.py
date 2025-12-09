@@ -37,7 +37,7 @@ def make_predictions(model, X_test, y_test, scaler):
     )[:, 0]
     
     y_pred_actual = scaler.inverse_transform(
-        np.concatenate([y_pred, 
+        np.concatenate([y_pred,
                        np.zeros((len(y_pred), scaler.n_features_in_ - 1))], axis=1)
     )[:, 0]
     
@@ -119,3 +119,19 @@ def print_metrics(metrics):
     else:
         print(f" Weak trend prediction ({metrics['Direction_Accuracy']:.1f}% direction accuracy)")
 
+if __name__ == "__main__":
+    from data_preprocessor import preprocess_pipeline
+    from tensorflow import keras
+    import config
+
+    print("\n=== RUNNING MODEL EVALUATION ===\n")
+
+    X_train, X_test, y_train, y_test, scaler = preprocess_pipeline()
+
+    model = keras.models.load_model(config.MODEL_PATH)
+
+    y_actual, y_pred = make_predictions(model, X_test, y_test, scaler)
+
+    metrics = calculate_metrics(y_actual, y_pred)
+
+    print_metrics(metrics)

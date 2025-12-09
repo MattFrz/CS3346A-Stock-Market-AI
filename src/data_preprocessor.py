@@ -162,7 +162,7 @@ def split_train_test(input_sequences, target_prices, split_ratio=TRAIN_TEST_SPLI
     Returns:
         tuple: (sequences_train, sequences_test, prices_train, prices_test)
     """
-    print(f"Splitting data: {split_ratio*100:. 0f}% train, {(1-split_ratio)*100:. 0f}% test...")
+    print(f"Splitting data: {split_ratio*100:.0f}% train, {(1-split_ratio)*100:.0f}% test...")
     
     # Calculate split index
     split_index = int(len(input_sequences) * split_ratio)
@@ -238,7 +238,8 @@ def preprocess_pipeline(use_features=USE_FEATURES):
 if __name__ == "__main__":
     # Uses USE_FEATURES from config.py by default
     result = preprocess_pipeline()
-    
+    X_train, X_test, y_train, y_test, scaler = preprocess_pipeline()
+
     if result is not None:
         sequences_train, sequences_test, prices_train, prices_test, scaler = result
         
