@@ -1,5 +1,5 @@
 """
-train. py
+train.py
 
 Trains the LSTM model on preprocessed stock data and saves the trained model.
 """
@@ -19,21 +19,21 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import WINDOW_SIZE, EPOCHS, BATCH_SIZE, MODEL_PATH
 from data_preprocessor import preprocess_pipeline
 
-
 def build_model(window_size, n_features):
     """
-    Builds and compiles the LSTM model. 
+    Builds and compiles the LSTM model.
     
     Args:
         window_size: Number of time steps in input
         n_features: Number of features per time step
-        
+    
     Returns:
         Compiled Keras model
     """
     print("\n" + "="*50)
     print("BUILDING MODEL")
     print("="*50)
+
     print(f"Input shape: ({window_size}, {n_features})")
     print(f"Window size: {window_size} days")
     print(f"Features: {n_features}")
@@ -67,7 +67,6 @@ def build_model(window_size, n_features):
     
     return model
 
-
 def train_model(model, X_train, y_train, X_test, y_test, epochs=EPOCHS, batch_size=BATCH_SIZE):
     """
     Trains the model with callbacks for early stopping and model checkpointing.
@@ -78,6 +77,7 @@ def train_model(model, X_train, y_train, X_test, y_test, epochs=EPOCHS, batch_si
     print("\n" + "="*50)
     print("TRAINING MODEL")
     print("="*50)
+
     print(f"Epochs: {epochs}")
     print(f"Batch size: {batch_size}")
     print(f"Training samples: {len(X_train)}")
@@ -120,7 +120,6 @@ def train_model(model, X_train, y_train, X_test, y_test, epochs=EPOCHS, batch_si
     
     return history
 
-
 def save_training_history(history):
     """
     Saves training history to a text file.
@@ -145,7 +144,6 @@ def save_training_history(history):
         f.write(f"  Val MAE: {history.history['val_mae'][best_epoch - 1]:.6f}\n")
     
     print(f"Training history saved to {history_path}")
-
 
 def main():
     """
@@ -188,6 +186,7 @@ def main():
     print("\n" + "="*60)
     print("FINAL RESULTS")
     print("="*60)
+
     best_epoch = np.argmin(history.history['val_loss']) + 1
     print(f"Best Epoch: {best_epoch}")
     print(f"Training Loss: {history.history['loss'][best_epoch - 1]:.6f}")
@@ -196,8 +195,8 @@ def main():
     print(f"Validation MAE: {history.history['val_mae'][best_epoch - 1]:.6f}")
     print("="*60 + "\n")
     
-    print("✅ Training complete! Model ready for evaluation and prediction.")
+    print("Training complete! Model ready for evaluation and prediction.")
 
-
+# Run main training pipeline if train.py is executed directly
 if __name__ == "__main__":
     main()

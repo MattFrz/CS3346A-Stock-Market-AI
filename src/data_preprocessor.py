@@ -2,7 +2,7 @@
 data_preprocessor.py
 
 Loads raw stock data, cleans and normalizes it, and creates sequences for training the model.
-Also handles train/test splitting. 
+Also handles train/test splitting.
 """
 
 import sys
@@ -21,11 +21,9 @@ from config import DATA_PATH, TRAIN_TEST_SPLIT, WINDOW_SIZE, SCALER_PATH, USE_FE
 # Import feature engineering
 from feature_engineering import add_all_features
 
-
-
 def load_data():
     """
-    Loads the CSV file saved by data_collector.py.  
+    Loads the CSV file saved by data_collector.py.
 
     Returns:
         pandas.DataFrame: The loaded stock data
@@ -41,7 +39,6 @@ def load_data():
     df = pd.read_csv(DATA_PATH, index_col=0, parse_dates=True)
     print(f"Loaded {len(df)} rows of data")
     return df
-
 
 def clean_data(df):
     """
@@ -75,7 +72,6 @@ def clean_data(df):
     print(f"Data cleaned. Final shape: {df.shape}")
     return df
 
-
 def normalize_data(df):
     """
     Normalizes all features to 0-1 range using MinMaxScaler to make learning more efficient.
@@ -105,10 +101,9 @@ def normalize_data(df):
     
     return scaled_data, scaler
 
-
 def create_sequences(data, window_size=WINDOW_SIZE, target_column_index=3):
     """
-    Creates sequences for model training using sliding window approach. 
+    Creates sequences for model training using sliding window approach.
 
     Example with window_size = 3:
         Days 1-3 -> predict day 4
@@ -122,7 +117,7 @@ def create_sequences(data, window_size=WINDOW_SIZE, target_column_index=3):
         target_column_index: Index of the column to predict (default 3 = 'Close')
 
     Returns:
-        tuple: (input_sequences, target_prices) 
+        tuple: (input_sequences, target_prices)
             where input_sequences is the historical data and target_prices is the price to predict
     """
     print(f"Creating sequences with window size {window_size}...")
@@ -148,17 +143,16 @@ def create_sequences(data, window_size=WINDOW_SIZE, target_column_index=3):
     
     return input_sequences, target_prices
 
-
 def split_train_test(input_sequences, target_prices, split_ratio=TRAIN_TEST_SPLIT):
     """
-    Splits data into training and testing sets. 
+    Splits data into training and testing sets.
     We don't shuffle because we want older data for training and newer data for testing.
 
     Args:
         input_sequences: Historical data sequences
         target_prices: Prices to predict
-        split_ratio: Proportion to use for training (e.g.  0.8 = 80% towards training)
-        
+        split_ratio: Proportion to use for training (e.g. 0.8 = 80% towards training)
+    
     Returns:
         tuple: (sequences_train, sequences_test, prices_train, prices_test)
     """
@@ -178,20 +172,21 @@ def split_train_test(input_sequences, target_prices, split_ratio=TRAIN_TEST_SPLI
     
     return sequences_train, sequences_test, prices_train, prices_test
 
-
 def preprocess_pipeline(use_features=USE_FEATURES):
     """
     Runs the complete preprocessing pipeline:
     1. Load data
     2. Clean data
-    3.  Add features (if enabled)
+    3. Add features (if enabled)
     4. Normalize data
     5. Create sequences
     6. Split train/test
 
     Args:
-        use_features: If True, adds technical indicators.  If False, uses only OHLCV. 
-                     Defaults to USE_FEATURES from config.py
+        use_features:
+            If True, adds technical indicators.
+            If False, uses only OHLCV.
+            Defaults to USE_FEATURES from config.py
 
     Returns:
         tuple: (sequences_train, sequences_test, prices_train, prices_test, scaler)
@@ -232,7 +227,6 @@ def preprocess_pipeline(use_features=USE_FEATURES):
     print("="*50 + "\n")
     
     return sequences_train, sequences_test, prices_train, prices_test, scaler
-
 
 # Run the pipeline if data_preprocessor.py is executed directly
 if __name__ == "__main__":

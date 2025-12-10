@@ -1,3 +1,10 @@
+"""
+evaluate.py
+
+Tests the trained model's accuracy on the test dataset.
+Also calculates and interprets performance metrics (RMSE, MAE, R², MAPE, Direction Accuracy).
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,8 +13,10 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import sys
 import os
 
+# Add the parent directory to the path so Python can find config.py
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# Import settings from config.py
 import config 
 
 def make_predictions(model, X_test, y_test, scaler):
@@ -19,7 +28,7 @@ def make_predictions(model, X_test, y_test, scaler):
         X_test: Test input sequences
         y_test: Actual test values (normalized)
         scaler: Scaler for denormalization
-        
+    
     Returns:
         y_test_actual: Actual prices (denormalized)
         y_pred_actual: Predicted prices (denormalized)
@@ -44,7 +53,6 @@ def make_predictions(model, X_test, y_test, scaler):
     print(f"Predictions complete: {len(y_pred_actual)} values")
     
     return y_test_actual, y_pred_actual
-
 
 def calculate_metrics(y_actual, y_pred):
     """
@@ -79,7 +87,6 @@ def calculate_metrics(y_actual, y_pred):
     
     return metrics
 
-
 def print_metrics(metrics):
     """
     Print evaluation metrics in a formatted way.
@@ -87,6 +94,7 @@ def print_metrics(metrics):
     print("\n" + "="*60)
     print("MODEL EVALUATION RESULTS")
     print("="*60)
+
     print(f"Root Mean Squared Error (RMSE): ${metrics['RMSE']:.2f}")
     print(f"Mean Absolute Error (MAE):      ${metrics['MAE']:.2f}")
     print(f"R² Score (Accuracy):             {metrics['R2']:.4f} ({metrics['R2']*100:.2f}%)")
@@ -94,8 +102,10 @@ def print_metrics(metrics):
     print(f"Direction Accuracy:              {metrics['Direction_Accuracy']:.2f}%")
     print("="*60)
     
-    # Interpretation
+    # Interpret metrics
     print("\nINTERPRETATION:")
+
+    # Interpret RMSE
     if metrics['RMSE'] < 50:
         print(" Excellent: Predictions are very accurate (RMSE < $50)")
     elif metrics['RMSE'] < 100:
@@ -105,6 +115,7 @@ def print_metrics(metrics):
     else:
         print("Poor: High prediction error (RMSE > $200)")
     
+    # Interpret R²
     if metrics['R2'] > 0.95:
         print("Excellent model fit (R² > 0.95)")
     elif metrics['R2'] > 0.85:
@@ -114,11 +125,13 @@ def print_metrics(metrics):
     else:
         print(" Poor model fit (R² < 0.70)")
     
+    # Interpret Direction Accuracy
     if metrics['Direction_Accuracy'] > 60:
         print(f"Good trend prediction ({metrics['Direction_Accuracy']:.1f}% direction accuracy)")
     else:
         print(f" Weak trend prediction ({metrics['Direction_Accuracy']:.1f}% direction accuracy)")
 
+# Run the evaluation pipeline if evaluate.py is executed directly
 if __name__ == "__main__":
     from data_preprocessor import preprocess_pipeline
     from tensorflow import keras

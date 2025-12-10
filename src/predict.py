@@ -21,7 +21,6 @@ from config import DATA_PATH, MODEL_PATH, SCALER_PATH, WINDOW_SIZE, USE_FEATURES
 # Import feature engineering
 from feature_engineering import add_all_features
 
-
 def load_trained_model():
     """
     Loads the trained model from storage.
@@ -40,7 +39,6 @@ def load_trained_model():
     model = keras.models.load_model(MODEL_PATH)
     print("Model loaded successfully")
     return model
-
 
 def load_scaler():
     """
@@ -63,7 +61,6 @@ def load_scaler():
     print("Scaler loaded successfully")
     return scaler
 
-
 def get_latest_data(num_days=WINDOW_SIZE, use_features=USE_FEATURES):
     """
     Gets the most recent stock data for prediction.
@@ -71,7 +68,7 @@ def get_latest_data(num_days=WINDOW_SIZE, use_features=USE_FEATURES):
     Args:
         num_days: Number of days to retrieve (use extra for feature calculations)
         use_features: Whether to add technical indicators
-        
+    
     Returns:
         tuple: (processed_dataframe, target_column_name) or (None, None) if data file not found
     """
@@ -117,7 +114,6 @@ def get_latest_data(num_days=WINDOW_SIZE, use_features=USE_FEATURES):
     
     return latest_data, target_column
 
-
 def prepare_prediction_data(data, scaler, target_column):
     """
     Prepares the data for prediction by normalizing it.
@@ -146,7 +142,6 @@ def prepare_prediction_data(data, scaler, target_column):
     print(f"Target column '{target_column}' at index {target_column_index}")
     
     return prediction_input, target_column_index
-
 
 def make_prediction(model, prediction_input, scaler, target_column_index):
     """
@@ -177,7 +172,6 @@ def make_prediction(model, prediction_input, scaler, target_column_index):
     
     print("Prediction complete")
     return predicted_price
-
 
 def predict_next_day():
     """
@@ -236,6 +230,7 @@ def predict_next_day():
     print("\n" + "="*60)
     print("PREDICTION RESULTS")
     print("="*60)
+    
     print(f"Features Used:     {'Technical Indicators' if USE_FEATURES else 'Raw OHLCV Only'}")
     print(f"Current Date:      {results['current_date']}")
     print(f"Current Price:     ${results['current_price']:,.2f}")

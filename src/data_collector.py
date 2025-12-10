@@ -18,13 +18,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import TICKER, START_DATE, END_DATE, DATA_PATH
 
 def download_sp500_data():
-
     """"
     Downloads historical data from Yahoo Finance and saves it to a CSV file.
     """
     print(f"Downloading data for {TICKER} from {START_DATE} to {END_DATE}...")
 
-     # Use yfinance to download daily OHLCV data
+    # Use yfinance to download daily OHLCV data
     df = yf.download(
         TICKER,
         start=START_DATE,
@@ -52,5 +51,6 @@ def download_sp500_data():
 
     return df
 
+# Download sp500 data if data_collector.py is executed directly
 if __name__ == "__main__":
     download_sp500_data()

@@ -13,14 +13,13 @@ import numpy as np
 # Add the parent directory to the path
 sys. path.append(os.path. dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
 def calculate_moving_averages(df):
     """
     Calculate Simple Moving Averages (SMA) for different time windows.
     
     Args:
         df: DataFrame with OHLCV data
-        
+    
     Returns:
         DataFrame with added MA columns
     """
@@ -36,7 +35,6 @@ def calculate_moving_averages(df):
     
     return df
 
-
 def calculate_rsi(df, period=14):
     """
     Calculate Relative Strength Index (RSI) - momentum indicator.
@@ -48,7 +46,7 @@ def calculate_rsi(df, period=14):
     Args:
         df: DataFrame with OHLCV data
         period: Lookback period (default 14 days)
-        
+    
     Returns:
         DataFrame with RSI column
     """
@@ -71,7 +69,6 @@ def calculate_rsi(df, period=14):
     
     return df
 
-
 def calculate_macd(df, fast=12, slow=26, signal=9):
     """
     Calculate MACD (Moving Average Convergence Divergence) - trend indicator.
@@ -86,7 +83,7 @@ def calculate_macd(df, fast=12, slow=26, signal=9):
         fast: Fast EMA period (default 12)
         slow: Slow EMA period (default 26)
         signal: Signal line period (default 9)
-        
+    
     Returns:
         DataFrame with MACD columns
     """
@@ -107,7 +104,6 @@ def calculate_macd(df, fast=12, slow=26, signal=9):
     
     return df
 
-
 def calculate_bollinger_bands(df, period=20, std_dev=2):
     """
     Calculate Bollinger Bands - volatility indicator.
@@ -120,7 +116,7 @@ def calculate_bollinger_bands(df, period=20, std_dev=2):
         df: DataFrame with OHLCV data
         period: Moving average period (default 20)
         std_dev: Number of standard deviations (default 2)
-        
+    
     Returns:
         DataFrame with Bollinger Band columns
     """
@@ -145,7 +141,6 @@ def calculate_bollinger_bands(df, period=20, std_dev=2):
     
     return df
 
-
 def calculate_volatility(df, period=14):
     """
     Calculate price volatility (standard deviation of returns).
@@ -153,7 +148,7 @@ def calculate_volatility(df, period=14):
     Args:
         df: DataFrame with OHLCV data
         period: Lookback period
-        
+    
     Returns:
         DataFrame with volatility column
     """
@@ -167,15 +162,14 @@ def calculate_volatility(df, period=14):
     
     return df
 
-
 def calculate_volume_features(df, period=20):
     """
-    Calculate volume-based features. 
+    Calculate volume-based features.
     
     Args:
         df: DataFrame with OHLCV data
         period: Lookback period
-        
+    
     Returns:
         DataFrame with volume features
     """
@@ -189,14 +183,13 @@ def calculate_volume_features(df, period=20):
     
     return df
 
-
 def add_all_features(df):
     """
     Adds ALL technical indicators to the dataframe.
     
     Args:
         df: Cleaned DataFrame with OHLCV data
-        
+    
     Returns:
         DataFrame with all features added
     """
@@ -236,8 +229,7 @@ def add_all_features(df):
     
     return df_features
 
-
-# Test feature engineering on its own
+# Test feature engineering on its own when executed directly
 if __name__ == "__main__":
     from data_preprocessor import load_data, clean_data
     
