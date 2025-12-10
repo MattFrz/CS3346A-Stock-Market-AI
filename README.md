@@ -14,6 +14,7 @@ https://github.com/MattFrz/CS3346A-Stock-Market-AI.git
 ### 2. Install Requirements
 - Run this command in the project's root folder (...\CS3346A-Stock-Market-AI\\)
 ```shell
+pip install --upgrade pip wheel setuptools
 pip install -r requirements.txt
 ```
 
