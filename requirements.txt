@@ -1,5 +1,5 @@
 # Data Collection
-yfinance==0.2.32
+yfinance==0.2.66
 
 # Data Processing
 pandas==2.1.3
